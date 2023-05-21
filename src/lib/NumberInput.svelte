@@ -7,18 +7,18 @@
 	const dispatch = createEventDispatcher();
 
   function addNumber(e) {
-    navigator.vibrate(100)
+    navigator.vibrate(50)
     const number = e.target.innerHTML.toString()
     value = Number(value.toString() + number)
   }
 
   function clear() {
-    navigator.vibrate()
+    navigator.vibrate(50)
     value = 0;
   }
 
   function submit() {
-    navigator.vibrate()
+    navigator.vibrate(50)
     if (value === solution) {
       dispatch('correct')
     } else {
@@ -35,7 +35,7 @@
     class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-4xl transition duration-150"
   >{value}</div>
   <div class="grid grid-cols-3 gap-2">
-    <button on:click={addNumber}>1</button>
+    <button on:touchstart={addNumber}>1</button>
     <button on:click={addNumber}>2</button>
     <button on:click={addNumber}>3</button>
     <button on:click={addNumber}>4</button>
