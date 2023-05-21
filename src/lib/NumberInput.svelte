@@ -23,7 +23,7 @@
 <div class="fixed bottom-0 inset-x-0 p-2">
   <div class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-xl">{value}</div>
   <div class="grid grid-cols-3 gap-2">
-    <button on:touchstart={addNumber}>1</button>
+    <button on:click={addNumber}>1</button>
     <button on:click={addNumber}>2</button>
     <button on:click={addNumber}>3</button>
     <button on:click={addNumber}>4</button>
