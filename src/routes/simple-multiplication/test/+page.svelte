@@ -4,23 +4,20 @@
   import NumberInput from '$lib/NumberInput.svelte';
 
   let multiple = $page.url.searchParams.get('multiple')
-
   let currentMultiplier = 1;
-  let solution;
+  
+  $: solution = multiple * currentMultiplier
 
-  function submitSolution(event) {
-    if (solution !== multiple * currentMultiplier) {
-      currentMultiplier = 1;
-      solution = 0;
-      return
-    }
-
+  function onCorrect() {
     if (currentMultiplier === 10) {
       return goto('/simple-multiplication/success')
     }
 
     currentMultiplier ++;
-    solution = 0;
+  }
+
+  function onIncorrect() {
+    currentMultiplier = 1;
   }
 </script>
 
@@ -28,6 +25,8 @@
 
 <p class="text-center text-4xl">{multiple} x {currentMultiplier}</p>
 
-<NumberInput bind:value={solution} on:submit={submitSolution}>
-  <!-- <p class="mb-2 text-center text-red-500">Sorry, that was wrong...</p> -->
-</NumberInput>
+<NumberInput
+  bind:solution
+  on:correct={onCorrect}
+  on:incorrect={onIncorrect}
+/>

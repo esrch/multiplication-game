@@ -1,9 +1,12 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 
-	const dispatch = createEventDispatcher();
-
   export let value = 0;
+  export let solution;
+  let correct = false;
+  let incorrect = false;
+
+	const dispatch = createEventDispatcher();
 
   function addNumber(e) {
     const number = e.target.innerHTML.toString()
@@ -15,14 +18,27 @@
   }
 
   function submit() {
-    dispatch('submit', {
-      value
-    })
+    if (value === solution) {
+      correct = true;
+      setTimeout(() => correct = false, 150);
+      dispatch('correct')
+    } else {
+      incorrect = true;
+      setTimeout(() => incorrect = false, 150);
+      dispatch('incorrect');
+    }
+
+    value = 0;
   }
+
 </script>
 <div class="fixed bottom-0 inset-x-0 p-2">
   <slot/>
-  <div class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-4xl">{value}</div>
+  <div
+    class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-4xl transition duration-150"
+    class:bg-green-200={correct}
+    class:bg-red-200={incorrect}
+  >{value}</div>
   <div class="grid grid-cols-3 gap-2">
     <button on:click={addNumber}>1</button>
     <button on:click={addNumber}>2</button>
