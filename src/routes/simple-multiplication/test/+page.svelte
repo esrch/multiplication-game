@@ -24,9 +24,9 @@
   }
 </script>
 
-<h1 class="text-center text-2xl font-bold mb-8">Multiples of {multiple}</h1>
+<h1 class="text-center text-4xl font-bold mb-16">Multiples of {multiple}</h1>
 
-<p class="text-center text-xl">{multiple} x {currentMultiplier}</p>
+<p class="text-center text-4xl">{multiple} x {currentMultiplier}</p>
 
 <NumberInput bind:value={solution} on:submit={submitSolution}>
   <!-- <p class="mb-2 text-center text-red-500">Sorry, that was wrong...</p> -->

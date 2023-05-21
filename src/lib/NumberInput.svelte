@@ -22,7 +22,7 @@
 </script>
 <div class="fixed bottom-0 inset-x-0 p-2">
   <slot/>
-  <div class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-xl">{value}</div>
+  <div class="w-full h-12 border-2 mb-2 rounded-xl grid place-content-center text-4xl">{value}</div>
   <div class="grid grid-cols-3 gap-2">
     <button on:click={addNumber}>1</button>
     <button on:click={addNumber}>2</button>
