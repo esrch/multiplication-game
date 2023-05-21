@@ -41,6 +41,6 @@
 
 <style lang="postcss">
 button {
-  @apply grid place-content-center h-16 bg-gray-100 active:bg-gray-200 rounded-xl text-xl;
+  @apply grid place-content-center h-16 bg-gray-100 active:bg-gray-200 rounded-xl text-3xl;
 }
 </style>
