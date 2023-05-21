@@ -2,7 +2,7 @@
 </script>
 
 <h1>Home</h1>
-<a href="multiplication">Multiplication</a>
+<a href="simple-multiplication">Simple multiplication</a>
 
 
 <style>
