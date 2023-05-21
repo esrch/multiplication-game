@@ -16,22 +16,22 @@
     }
 
     correct = true;
-    setTimeout(() => correct = false, 300);
+    setTimeout(() => correct = false, 700);
 
     currentMultiplier ++;
   }
 
   function onIncorrect() {
     incorrect = true;
-    setTimeout(() => incorrect = false, 300)
+    setTimeout(() => incorrect = false, 700)
 
     currentMultiplier = 1;
   }
 </script>
 
-<div class="h-screen transition duration-300"
-  class:bg-green-100={correct}
-  class:bg-red-100={incorrect}
+<div class="h-screen transition duration-700"
+  class:bg-green-200={correct}
+  class:bg-red-200={incorrect}
 >
   <h1 class="text-center text-4xl font-bold mb-16">Multiples of {multiple}</h1>
   <p class="text-center text-4xl">{multiple} x {currentMultiplier}</p>
