@@ -19,10 +19,10 @@
 
   function submit() {
     if (value === solution) {
-      navigator.vibrate(100)
+      navigator.vibrate(200)
       dispatch('correct')
     } else {
-      navigator.vibrate([50, 50, 50])
+      navigator.vibrate([80, 80, 80])
       dispatch('incorrect');
     }
 
