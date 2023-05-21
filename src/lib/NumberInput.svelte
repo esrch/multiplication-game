@@ -7,15 +7,18 @@
 	const dispatch = createEventDispatcher();
 
   function addNumber(e) {
+    navigator.vibrate(100)
     const number = e.target.innerHTML.toString()
     value = Number(value.toString() + number)
   }
 
   function clear() {
+    navigator.vibrate()
     value = 0;
   }
 
   function submit() {
+    navigator.vibrate()
     if (value === solution) {
       dispatch('correct')
     } else {
