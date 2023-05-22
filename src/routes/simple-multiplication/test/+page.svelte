@@ -12,7 +12,7 @@
 
   function onCorrect() {
     if (currentMultiplier === 10) {
-      return goto('/simple-multiplication/success')
+      return goto('/success')
     }
 
     correct = true;
@@ -38,7 +38,7 @@
 </div>
 
 <NumberInput
-  bind:solution
+  solution={solution}
   on:correct={onCorrect}
   on:incorrect={onIncorrect}
 />
